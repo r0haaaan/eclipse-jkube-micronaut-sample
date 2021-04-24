@@ -1,16 +1,20 @@
-## Micronaut 2.4.2 Documentation
+# Eclipse JKube Micronaut sample
 
-- [User Guide](https://docs.micronaut.io/2.4.2/guide/index.html)
-- [API Reference](https://docs.micronaut.io/2.4.2/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/2.4.2/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+This is a demo project used for my blog on deploying Micronaut application to Kubernetes using Eclipse JKube
 
-## Feature http-client documentation
+## How to Build
+```
+mvn package
+```
 
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+## Building and Pushing Docker image to Docker Hub
+```
+# Configure your dockerhub username in pom.xml
 
-## Feature management documentation
+mvn k8s:build k8s:push
+```
 
-- [Micronaut Management documentation](https://docs.micronaut.io/latest/guide/index.html#management)
-
+## Deploying to Kubernetes
+```
+mvn k8s:resource k8s:apply
+```
